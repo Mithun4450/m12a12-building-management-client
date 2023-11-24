@@ -47,7 +47,7 @@ const Navbar = () => {
                         </ul>
                        </div>  */}
                        
-                       <IoMdLogIn className='text-3xl' />
+                       <Link to="/login"><IoMdLogIn className='text-3xl' /></Link>
                     
                    
                 </div>
