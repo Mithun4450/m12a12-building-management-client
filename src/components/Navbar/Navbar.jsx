@@ -1,8 +1,20 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png'
 import { IoMdLogIn } from "react-icons/io";
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { useContext } from 'react';
 
 const Navbar = () => {
+
+    const { logOut, user} = useContext(AuthContext);
+    console.log(user)
+
+    const handleLogOut = () =>{
+        logOut()
+        .then()
+        .catch()
+    }
+
     return (
         <div className='mx-auto shadow-lg px-8 py-4'>
             <div className="navbar bg-base-100">
@@ -31,23 +43,29 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    
+                        {
+                            user? 
+                            <div className="dropdown dropdown-end">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                     {
+                                        user.photoURL? <img src={user.photoURL} /> : <img src=""></img>
+
+                                     }
+                                </div>
+                                </label>
+                                <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                                
+                                    <li className='pointer-events-none text-sky-600 font-bold'><h2>{user.displayName}</h2></li>
+                                    <li><Link to="/dashboard">Dashboard</Link></li>
+                                    <li><button onClick={handleLogOut}>LogOut</button></li>
+                                </ul>
+                           </div> 
+                           :
+                           <Link to="/login"><IoMdLogIn className='text-3xl' /></Link>
+                        }
                         
-                        {/* <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                            <img alt="Tailwind CSS Navbar component" src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                            </div>
-                        </label>
-                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                            
-                            <li className='pointer-events-none text-sky-600 font-bold'><h2>User Name</h2></li>
-                            <li><Link to="/dashboard">Dashboard</Link></li>
-                            <li><a>Logout</a></li>
-                        </ul>
-                       </div>  */}
                        
-                       <Link to="/login"><IoMdLogIn className='text-3xl' /></Link>
                     
                    
                 </div>
