@@ -16,7 +16,7 @@ const BuildingLocation = () => {
                     <img className="w-full rounded-xl mb-4" src={map} alt="" />
                 </div>
                 <div className="w-3/4 lg:w-1/2 ">
-                    <address className="text-2xl">
+                    <address className="text-xl lg:text-2xl">
                     Concord Palace <br />
                     Block: SE (F), Plot:03, <br />
                     Gulshan Avenue, Gulshan-1, <br />
