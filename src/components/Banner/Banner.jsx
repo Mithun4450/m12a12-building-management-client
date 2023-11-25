@@ -22,6 +22,7 @@ const Banner = () => {
                             <p className="text-white text-left text-xs md:text-sm lg:text-lg ">Manage easily your apartment needs with flexibility and exclusive support. Save time and money. Ideal for you and your family.</p>
                             <div className="flex gap-5">
                                 <button className="btn  bg-sky-600 border-none text-white">Get to know us</button>
+                                <button className="btn btn-secondary">Use Coupon Code CP15 <br /> to get 15% discount</button>
                                 
                             </div>
                         </div>
@@ -37,7 +38,7 @@ const Banner = () => {
                             <p className="text-white text-left text-xs md:text-sm lg:text-lg ">Manage easily your apartment needs with flexibility and exclusive support. Save time and money. Ideal for you and your family.</p>
                             <div className="flex gap-5">
                                 <button className="btn  bg-sky-600 border-none text-white">Get to know us</button>
-                                
+                                <button className="btn btn-secondary">Use Coupon Code CP15 <br /> to get 15% discount</button>
                             </div>
                         </div>
                     </div>
@@ -50,7 +51,7 @@ const Banner = () => {
                             <p className="text-white text-left text-xs md:text-sm lg:text-lg ">Manage easily your apartment needs with flexibility and exclusive support. Save time and money. Ideal for you and your family.</p>
                             <div className="flex gap-5">
                                 <button className="btn  bg-sky-600 border-none text-white">Get to know us</button>
-                                
+                                <button className="btn btn-secondary">Use Coupon Code CP15 <br /> to get 15% discount</button>
                             </div>
                         </div>
                     </div>
@@ -63,7 +64,7 @@ const Banner = () => {
                             <p className="text-white text-left text-xs md:text-sm lg:text-lg ">Manage easily your apartment needs with flexibility and exclusive support. Save time and money. Ideal for you and your family.</p>
                             <div className="flex gap-5">
                                 <button className="btn  bg-sky-600 border-none text-white">Get to know us</button>
-                                
+                                <button className="btn btn-secondary">Use Coupon Code CP15 <br /> to get 15% discount</button>
                             </div>
                         </div>
                     </div>
@@ -76,7 +77,7 @@ const Banner = () => {
                             <p className="text-white text-left text-xs md:text-sm lg:text-lg ">Manage easily your apartment needs with flexibility and exclusive support. Save time and money. Ideal for you and your family.</p>
                             <div className="flex gap-5">
                                 <button className="btn  bg-sky-600 border-none text-white">Get to know us</button>
-                                
+                                <button className="btn btn-secondary">Use Coupon Code CP15 <br /> to get 15% discount</button>
                             </div>
                         </div>
                     </div>
