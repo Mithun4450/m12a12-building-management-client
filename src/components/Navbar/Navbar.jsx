@@ -16,7 +16,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='mx-auto shadow-lg px-8 py-4'>
+        <div className='mx-auto shadow-lg px-8 py-2'>
             <div className="navbar bg-base-100">
                 <div className="navbar-start ">
                     
