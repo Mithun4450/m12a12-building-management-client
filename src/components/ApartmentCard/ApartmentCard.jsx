@@ -1,14 +1,79 @@
-import { useContext } from "react";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+import useAuth from "../../hooks/useAuth";
+import { useLocation, useNavigate } from "react-router-dom";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
 
 
 const ApartmentCard = ({apartment}) => {
     const {_id, image, block_name, floor_no, apartment_no, rent} = apartment;
-    const {user} = useContext(AuthContext);
+    
+    const { user } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const axiosSecure = useAxiosSecure();
 
-    const handleMakeAgreement = () =>{
+        const today = new Date();
+        const agreement_request_date = `${today.getDate().toString().padStart(2, '0')}-${(today.getMonth() + 1)
+          .toString()
+          .padStart(2, '0')}-${today.getFullYear()} `;
+        console.log(agreement_request_date)
+    
+
+    const handleAgreementRequest = () => {
+        
+        if (user && user.email) {
+            
+            const agreementRequest = {
+                apartment_id: _id,
+                user_name: user.displayName,
+                user_email: user.email,
+                status: "pending",
+                agreement_request_date,
+                block_name,
+                floor_no,
+                apartment_no,
+                rent
+                
+            }
+
+            axiosSecure.post('/agreements', agreementRequest)
+                .then(res => {
+                    console.log(res.data)
+                    if (res.data.insertedId) {
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "You have successfully made request for agreement",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        
+                        
+                    }
+
+                })
+        }
+        else {
+            Swal.fire({
+                title: "You are not Logged In",
+                text: "Please login to make request for agreement",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, login!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    
+                    navigate('/login', { state: { from: location } })
+                }
+            });
+        }
+        
 
     }
+
     return (
         <div>
             <div className="card bg-base-100 shadow-xl">
@@ -19,7 +84,7 @@ const ApartmentCard = ({apartment}) => {
                     <p>Apartment No. <span>{apartment_no}</span></p>
                     <p>Rent: Tk.<span>{rent}</span></p>
                     <div className="card-actions justify-end">
-                    <button className="btn btn-info">Make Agreement</button>
+                    <button onClick={handleAgreementRequest} className="btn btn-info">Request for Agreement</button>
                     </div>
                 </div>
             </div>

@@ -49,6 +49,7 @@ const Apartments = () => {
             {
                 apartments.map(apartment =><ApartmentCard key={apartment._id}
                 apartment={apartment}
+                
                 ></ApartmentCard>)
             }
             </div>

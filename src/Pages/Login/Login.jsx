@@ -27,6 +27,7 @@ const Login = () => {
                 e.target.reset();
                 swal("Good job!","You have successfully logged in!", "success");
                 navigate(location?.state ? location.state : "/")
+               
 
             })
             .catch(error =>{

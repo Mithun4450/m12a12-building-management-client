@@ -16,8 +16,8 @@ const Navbar = () => {
     }
 
     return (
-        <div className='mx-auto px-8 py-2'>
-            <div className="navbar bg-base-100">
+        <div className='mx-auto px-8 py-2 bg-sky-600 '>
+            <div className="navbar bg-base-100 rounded-xl">
                 <div className="navbar-start ">
                     
                     <div className='mr-24' >
@@ -38,8 +38,8 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden md:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li className='text-lg font-semibold'><Link to="/">Home</Link></li>
-                        <li className='text-lg font-semibold'><Link to="/apartments">Apartments</Link></li>                   
+                        <li className='text-lg font-semibold text-sky-600'><Link to="/">Home</Link></li>
+                        <li className='text-lg font-semibold text-sky-600'><Link to="/apartments">Apartments</Link></li>                   
                     </ul>
                 </div>
                 <div className="navbar-end">

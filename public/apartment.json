@@ -96,9 +96,111 @@
     },
     {
       "image": "https://i.ibb.co/LQrjbgP/img5.jpg",
+      "floor_no": 7,
+      "block_name": "Roadside Apartments",
+      "apartment_no": "T602",
+      "rent": 19500
+    },
+    {
+      "image": "https://i.ibb.co/Y28S5Dx/img1.jpg",
+      "floor_no": 6,
+      "block_name": "Sunset Towers",
+      "apartment_no": "A102",
+      "rent": 15000
+    },
+    {
+      "image": "https://i.ibb.co/4VVJzLg/img2.jpg",
+      "floor_no": 4,
+      "block_name": "Lake View Apartments",
+      "apartment_no": "B205",
+      "rent": 12000
+    },
+    {
+      "image": "https://i.ibb.co/G3Gwmp9/img3.png",
+      "floor_no": 7,
+      "block_name": "Greenwood Heights",
+      "apartment_no": "C805",
+      "rent": 18000
+    },
+    {
+      "image": "https://i.ibb.co/Qdk4LqS/img4.jpg",
+      "floor_no": 3,
+      "block_name": "Lakeside Manor",
+      "apartment_no": "D103",
+      "rent": 10000
+    },
+    {
+      "image": "https://i.ibb.co/LQrjbgP/img5.jpg",
+      "floor_no": 7,
+      "block_name": "Park side Residences",
+      "apartment_no": "E602",
+      "rent": 20000
+    },
+    {
+      "image": "https://i.ibb.co/cb6SWWY/img6.jpg",
+      "floor_no": 5,
+      "block_name": "Road View Heights",
+      "apartment_no": "F403",
+      "rent": 13500
+    },
+    {
+      "image": "https://i.ibb.co/N1gG2HJ/img7.jpg",
+      "floor_no": 8,
+      "block_name": "Cityscape Plaza",
+      "apartment_no": "G1002",
+      "rent": 22000
+    },
+    
+    {
+      "image": "https://i.ibb.co/23xdGxG/img8.jpg",
+      "floor_no": 6,
+      "block_name": "Lakeside Homes",
+      "apartment_no": "J504",
+      "rent": 17000
+    },
+    {
+      "image": "https://i.ibb.co/FbFNwVs/img9.jpg",
+      "floor_no": 7,
+      "block_name": "Rooftop Residences",
+      "apartment_no": "K602",
+      "rent": 19000
+    },
+    
+    {
+      "image": "https://i.ibb.co/Y28S5Dx/img1.jpg",
+      "floor_no": 9,
+      "block_name": "Skyline Towers",
+      "apartment_no": "M902",
+      "rent": 21000
+    },
+   
+    {
+      "image": "https://i.ibb.co/4VVJzLg/img2.jpg",
+      "floor_no": 8,
+      "block_name": "Jheelview Heights",
+      "apartment_no": "O803",
+      "rent": 17500
+    },
+   
+    {
+      "image": "https://i.ibb.co/G3Gwmp9/img3.png",
+      "floor_no": 4,
+      "block_name": "Lakefront Towers",
+      "apartment_no": "R405",
+      "rent": 13000
+    },
+    {
+      "image": "https://i.ibb.co/Qdk4LqS/img4.jpg",
+      "floor_no": 5,
+      "block_name": "Sunrise Residences",
+      "apartment_no": "S503",
+      "rent": 16500
+    },
+    {
+      "image": "https://i.ibb.co/LQrjbgP/img5.jpg",
       "floor_no": 6,
       "block_name": "Roadside Apartments",
-      "apartment_no": "T601",
+      "apartment_no": "T602",
       "rent": 19500
     }
   ]
