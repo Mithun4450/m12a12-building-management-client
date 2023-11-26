@@ -2,20 +2,43 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import ApartmentCard from "../ApartmentCard/ApartmentCard";
+import { useState } from "react";
+
 
 
 const Apartments = () => {
     const axiosPublic = useAxiosPublic();
 
-    const {data: apartments = []} = useQuery({
-        queryKey: ['apartments'], 
+    const [currentPage, setCurrentPage] = useState(0);
+
+    const {data:apartmentsCount=null} = useQuery({
+        queryKey: ['apartmentsCount'], 
         queryFn: async() =>{
-            const res = await axiosPublic.get('/apartments');
-            return res.data;
+            const res = await axiosPublic.get('/apartmentsCount');
+            console.log(res.data.count);
+            return res.data.count;
+            
         }
     })
 
-    console.log(apartments)
+   console.log(apartmentsCount)
+
+   const numberOfPages = Math.ceil(apartmentsCount / 6);
+    const pages = [...Array(numberOfPages).keys()];
+    console.log(pages);
+
+
+    const {data: apartments = [],  refetch} = useQuery({
+        queryKey: ['apartments'], 
+        queryFn: async() =>{
+            const res = await axiosPublic.get(`/apartments?page=${currentPage}&size=6`);
+            return res.data;
+            
+        }
+    })
+    refetch();
+    console.log(apartments);
+   
 
     return (
         <div className="my-14">
@@ -28,6 +51,31 @@ const Apartments = () => {
                 apartment={apartment}
                 ></ApartmentCard>)
             }
+            </div>
+
+            <div className="w-3/4 md:w-1/2 lg:w-1/4 mx-auto my-8 pagination">
+                
+               
+                <div className="join">
+                {
+                    pages.map(page => <button
+                        onClick={() => {
+                            setCurrentPage(page);
+                            
+                            
+                        }}
+                       
+                        className={currentPage === page ? 'join-item btn selected btn-info' : 'join-item btn'}
+                       
+                        
+                        
+                        key={page}
+                    >{page +1 }</button>)
+                }
+
+                </div>
+                 
+                
             </div>
             
         </div>
