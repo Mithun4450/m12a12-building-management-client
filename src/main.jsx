@@ -26,6 +26,7 @@ import ManageMembers from './components/ManageMembers/ManageMembers';
 import MakeAnnouncements from './components/MakeAnnoucements/MakeAnnouncements';
 import AgreementRequests from './components/AgreementRequests/AgreementRequests';
 import ManageCoupons from './components/ManageCoupons/ManageCoupons';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 const queryClient = new QueryClient();
 
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
 
   {
     path: 'dashboard',
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children: [
 
       // user
