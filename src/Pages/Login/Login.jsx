@@ -14,6 +14,8 @@ const Login = () => {
     const {loginWithEmailPassword, loginWithGoogle, loginWithGithub} = useContext(AuthContext);
     const navigate = useNavigate()
     const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+    console.log(location.state)
 
     const handleLogin = e =>{
         e.preventDefault()
@@ -27,7 +29,8 @@ const Login = () => {
                 console.log(loggedInUser)
                 e.target.reset();
                 swal("Good job!","You have successfully logged in!", "success");
-                navigate(location?.state ? location.state : "/")
+                
+                navigate(from, { replace: true });
                
 
             })
@@ -44,7 +47,8 @@ const Login = () => {
         .then(result =>{
 
             swal("Good job!","You have successfully logged in!", "success");
-            navigate(location?.state ? location.state : "/")
+            
+            navigate(from, { replace: true });
             
             const userInfo = {
                 name: result.user?.displayName,
@@ -72,7 +76,8 @@ const Login = () => {
             console.log(result.user);
 
             swal("Good job!","You have successfully logged in!", "success");
-            navigate(location?.state ? location.state : "/")
+            
+            navigate(from, { replace: true });
 
             const userInfo = {
                 name: result.user?.displayName,
