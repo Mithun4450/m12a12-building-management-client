@@ -3,9 +3,12 @@ import logo from '../../assets/logo.png'
 import { IoMdLogIn } from "react-icons/io";
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useContext } from 'react';
+import useAdmin from '../../hooks/useAdmin';
+import useMember from '../../hooks/useMember';
 
 const Navbar = () => {
-
+    const [isAdmin] = useAdmin();
+    const [isMember] = useMember();
     const { logOut, user} = useContext(AuthContext);
     console.log(user)
 
@@ -40,6 +43,7 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li className='text-lg font-semibold text-sky-600'><Link to="/">Home</Link></li>
                         <li className='text-lg font-semibold text-sky-600'><Link to="/apartments">Apartments</Link></li>                   
+                        {/* <li className='text-lg font-semibold text-sky-600'><Link to="/users">Users</Link></li>                    */}
                     </ul>
                 </div>
                 <div className="navbar-end">
@@ -57,8 +61,15 @@ const Navbar = () => {
                                 <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                                 
                                     <li className='pointer-events-none text-sky-600 font-bold'><h2>{user.displayName}</h2></li>
+                                    
                                     {
-                                     user &&  <li><Link to="/dashboard/user/myProfile">Dashboard</Link></li>
+                                        user && isAdmin && <li><Link to="/dashboard/admin/adminProfile">Dashboard</Link></li>
+                                    }
+                                    {
+                                        user && isMember && <li><Link to="/dashboard/member/myProfile">Dashboard</Link></li>
+                                    }
+                                    {
+                                        user && !isAdmin && !isMember && <li><Link to="/dashboard/user/myProfile">Dashboard</Link></li>
                                     }
                                     
                                     <li><button onClick={handleLogOut}>LogOut</button></li>

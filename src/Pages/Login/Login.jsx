@@ -5,10 +5,11 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import swal from 'sweetalert';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 
 const Login = () => {
-
+    const axiosPublic = useAxiosPublic();
     const [loginError, setLoginError] = useState('')
     const {loginWithEmailPassword, loginWithGoogle, loginWithGithub} = useContext(AuthContext);
     const navigate = useNavigate()
@@ -41,10 +42,24 @@ const Login = () => {
     const handleGoogleLogin = () =>{
         loginWithGoogle()
         .then(result =>{
-            const loggedInUser = result.user;
-            console.log(loggedInUser)
+
             swal("Good job!","You have successfully logged in!", "success");
             navigate(location?.state ? location.state : "/")
+            
+            const userInfo = {
+                name: result.user?.displayName,
+                email: result.user?.email,
+                role: "user"
+            }
+
+            axiosPublic.post('/users', userInfo)
+            .then(res =>{
+                console.log("user added to database", res.data);
+               
+                
+            })
+
+            
         })
         .catch(error =>{
             console.error(error)
@@ -55,8 +70,23 @@ const Login = () => {
         loginWithGithub()
         .then(result =>{
             console.log(result.user);
+
             swal("Good job!","You have successfully logged in!", "success");
             navigate(location?.state ? location.state : "/")
+
+            const userInfo = {
+                name: result.user?.displayName,
+                email: result.user?.email,
+                role: "user"
+            }
+
+            axiosPublic.post('/users', userInfo)
+            .then(res =>{
+                console.log("user added to database", res.data);
+                
+            })
+            
+            
 
         })
         .catch(error =>{

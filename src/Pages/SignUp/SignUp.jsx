@@ -4,9 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import swal from 'sweetalert';
 import { updateProfile } from "firebase/auth";
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 const SignUp = () => {
-
+    const axiosPublic = useAxiosPublic();
     const [signUpError, setSignUpError] = useState('');
     const {createUser, logOut} = useContext(AuthContext);
     const navigate = useNavigate();
@@ -44,7 +45,23 @@ const SignUp = () => {
                 swal("Good job!", "You have successfully signed up! Please login now!", "success");
 
                 updateProfile(result.user, {displayName: name, photoURL:photo})
-                    .then(() => console.log('Profile has been updated'))
+                    .then(() => {
+                        
+                        const userInfo = {
+                            name,
+                            email,
+                            role: "user"
+                        }
+
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    console.log('user added to the database')
+                                    
+                                    
+                                }
+                            })
+                    })
                     .catch(error => console.log(error))
 
                logOut();

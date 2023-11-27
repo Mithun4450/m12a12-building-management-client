@@ -5,7 +5,7 @@ const UserProfile = () => {
     const {user} = useAuth();
 
     return (
-        <div className="flex flex-col md:flex-row  p-8">
+        <div className="flex flex-col md:flex-row p-8">
             <div>
                 <h1 className="text-3xl font-bold mb-4">My Profile</h1>
                 <div className="mb-8">
