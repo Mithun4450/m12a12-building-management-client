@@ -29,6 +29,7 @@ const ApartmentCard = ({apartment}) => {
                 user_name: user.displayName,
                 user_email: user.email,
                 status: "pending",
+                role: "user",
                 agreement_request_date,
                 block_name,
                 floor_no,
