@@ -30,6 +30,7 @@ const AgreementRequests = () => {
                 {
                     agreements.map(agreement =><AgreementCard key={agreement._id}
                     agreement={agreement}
+                    refetch={refetch}
                     ></AgreementCard>)
                 }
             </div>
