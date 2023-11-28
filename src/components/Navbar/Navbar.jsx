@@ -66,7 +66,7 @@ const Navbar = () => {
                                         user && isAdmin && <li><Link to="/dashboard/admin/adminProfile">Dashboard</Link></li>
                                     }
                                     {
-                                        user && isMember && <li><Link to="/dashboard/member/myProfile">Dashboard</Link></li>
+                                        user && isMember &&  <li><Link to="/dashboard/member/myProfile">Dashboard</Link></li>
                                     }
                                     {
                                         user && !isAdmin && !isMember && <li><Link to="/dashboard/user/myProfile">Dashboard</Link></li>
