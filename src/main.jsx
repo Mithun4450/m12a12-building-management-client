@@ -31,6 +31,7 @@ import MakeAdmin from './components/Users/Users';
 import AdminRoute from './components/AdminRoute/AdminRoute';
 import Users from './components/Users/Users';
 import MemberRoute from './components/MemberRoute/MemberRoute';
+import Payment from './components/Payment/Payment';
 
 const queryClient = new QueryClient();
 
@@ -90,6 +91,10 @@ const router = createBrowserRouter([
       {
         path: "member/makePayment",
         element: <MemberRoute><MakePayment></MakePayment></MemberRoute>
+      },
+      {
+        path: "member/makePayment/payment",
+        element: <MemberRoute><Payment></Payment></MemberRoute>
       },
       {
         path: "member/paymentHistory",

@@ -17,7 +17,7 @@ const Footer = () => {
                 </div>
             </nav> 
             <aside>
-                <p>Copyright © 2023 - All right reserved by owner of Accord Palace</p>
+                <p>Copyright © 2023 - All right reserved by owner of Concord Palace</p>
             </aside>
         </footer>
     );

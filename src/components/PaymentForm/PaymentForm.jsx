@@ -2,6 +2,7 @@ import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { SlCalender } from "react-icons/sl";
+import { Link } from 'react-router-dom';
 
 const PaymentForm = ({payAgreement}) => {
     const {user_email, rent, floor_no, apartment_no, block_name} = payAgreement;
@@ -81,7 +82,7 @@ const PaymentForm = ({payAgreement}) => {
                     </div>
 
                     <div className="form-control mt-6">
-                    <button className="btn btn-info lg:w-1/2 mx-auto">Pay Now</button>
+                    <Link to="/dashboard/member/makePayment/payment"><button className="btn btn-info lg:w-1/2 mx-auto">Pay Now</button></Link>
                     </div>
                 </form>
                 </div>

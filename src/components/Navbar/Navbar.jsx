@@ -19,7 +19,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='mx-auto px-8 py-2 bg-sky-600 '>
+        <div className='mx-auto  '>
             <div className="navbar bg-base-100 rounded-xl">
                 <div className="navbar-start ">
                     
