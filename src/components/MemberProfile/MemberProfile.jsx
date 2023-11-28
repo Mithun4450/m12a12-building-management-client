@@ -46,7 +46,7 @@ const MemberProfile = () => {
 
             </div>
 
-            <div>
+            <div className="mb-8">
                 {
                     rentedAgreements.map(rentedAgreement =><RentedAgreementCard key={rentedAgreement._id}
                     rentedAgreement={rentedAgreement}
