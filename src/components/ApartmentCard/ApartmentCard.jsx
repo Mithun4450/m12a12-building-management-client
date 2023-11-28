@@ -2,7 +2,7 @@ import useAuth from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
-import { useEffect, useState } from "react";
+
 
 
 const ApartmentCard = ({apartment}) => {
@@ -13,11 +13,11 @@ const ApartmentCard = ({apartment}) => {
     const location = useLocation();
     const axiosSecure = useAxiosSecure();
 
-        const today = new Date();
-        const agreement_request_date = `${today.getDate().toString().padStart(2, '0')}-${(today.getMonth() + 1)
-          .toString()
-          .padStart(2, '0')}-${today.getFullYear()} `;
-        console.log(agreement_request_date)
+    const today = new Date();
+    const agreement_request_date = `${today.getDate().toString().padStart(2, '0')}-${(today.getMonth() + 1)
+        .toString()
+        .padStart(2, '0')}-${today.getFullYear()} `;
+    console.log(agreement_request_date)
     
 
     const handleAgreementRequest = () => {

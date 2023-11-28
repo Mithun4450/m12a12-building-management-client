@@ -6,11 +6,16 @@ const AgreementCard = ({agreement, refetch}) => {
 
     const axiosSecure = useAxiosSecure();
 
+    const today = new Date();
+    const agreement_accept_date = `${today.getDate().toString().padStart(2, '0')}-${(today.getMonth() + 1)
+        .toString()
+        .padStart(2, '0')}-${today.getFullYear()} `;
+    console.log(agreement_accept_date)
     
     const handleAcceptAgreement = agreement =>{
         
 
-        axiosSecure.patch(`/agreements/accept/${agreement._id}`)
+        axiosSecure.patch(`/agreements/accept/${agreement._id}`, {agreement_accept_date})
         .then(res =>{
             console.log(res.data)
             if(res.data.modifiedCount > 0){
