@@ -42,6 +42,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+        //  https://building-management-7b00e.web.app
+        //  https://m12a12-building-management-server.vercel.app/
       },
       {
         path: "/login",
