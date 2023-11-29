@@ -1,17 +1,46 @@
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { SlCalender } from "react-icons/sl";
-import { Link } from 'react-router-dom';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
+import { useNavigate } from 'react-router-dom';
 
 const PaymentForm = ({payAgreement}) => {
     const {user_email, rent, floor_no, apartment_no, block_name} = payAgreement;
+    const axiosSecure = useAxiosSecure();
+    const navigate = useNavigate();
 
     const [selectedDate, setSelectedDate] = useState(null);
 
     const handleDateChange = date => {
       setSelectedDate(date);
     };
+
+    
+
+    const handlePaymentFormData = e =>{
+        e.preventDefault();
+        const form = e.target;
+        console.log(form.month.value);
+        const month = form.month.value;
+
+        const paymentFormData = {user_email, rent, floor_no, apartment_no, block_name, month};
+
+        axiosSecure.post('/paymentFormData', paymentFormData)
+        .then(res => {
+            console.log(res.data)
+            if (res.data.insertedId) {
+                console.log(res.data.insertedId)
+                navigate("/dashboard/member/makePayment/payment")
+                
+                
+            }
+
+        })
+        
+        
+    }
+
+
 
     return (
         <div className="hero min-h-screen" >
@@ -20,7 +49,8 @@ const PaymentForm = ({payAgreement}) => {
                         
                 </div>
                 <div className="card flex-shrink-0 w-full ">
-                <form className="card-body ">
+
+                <form onSubmit={handlePaymentFormData} className="card-body "  >
                     
                     <div className="grid grid-cols-1 md:grid-cols-2  gap-8 mb-8">
                        
@@ -65,6 +95,8 @@ const PaymentForm = ({payAgreement}) => {
                             </label>
                             
                             <DatePicker
+                            name='month'
+                            
                             selected={selectedDate}
                             onChange={handleDateChange}
                             showMonthYearPicker
@@ -82,7 +114,8 @@ const PaymentForm = ({payAgreement}) => {
                     </div>
 
                     <div className="form-control mt-6">
-                    <Link to="/dashboard/member/makePayment/payment"><button className="btn btn-info lg:w-1/2 mx-auto">Pay Now</button></Link>
+                    
+                    <button  className="btn btn-info lg:w-1/2 mx-auto">Pay Now</button>
                     </div>
                 </form>
                 </div>
