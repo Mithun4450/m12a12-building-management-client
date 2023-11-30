@@ -72,7 +72,7 @@ const Navbar = () => {
                                         user && !isAdmin && !isMember && <li><Link to="/dashboard/user/myProfile">Dashboard</Link></li>
                                     }
                                     
-                                    <li><button onClick={handleLogOut}>LogOut</button></li>
+                                    <li><button  onClick={handleLogOut} className='btn btn-sm w-1/2 '>LogOut</button></li>
                                 </ul>
                            </div> 
                            :
