@@ -15,12 +15,24 @@ const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 const Payment = () => {
 
     const axiosSecure = useAxiosSecure();
+    // const [appliedCode, setAppliedCode] = useState(null);
     const [coupon, setCoupon] = useState(null);
+    
     const [discountRate, setDiscountRate] = useState(null);
     const {user} = useAuth();
     console.log(user.email)
 
-    const { refetch, data: payFormData = [] } = useQuery({
+    // const { refetch, data: coupon = [] } = useQuery({
+    //     queryKey: ['payFormData'],
+    //     queryFn: async() => {
+    //         const res = await axiosSecure.get(`/coupons/${appliedCode}`);
+    //         return res.data;
+    //     }
+    // })
+
+    
+
+    const { data: payFormData = [] } = useQuery({
         queryKey: ['payFormData', user?.email],
         queryFn: async() => {
             const res = await axiosSecure.get(`/paymentFormData/${user.email}`);
@@ -34,6 +46,8 @@ const Payment = () => {
         e.preventDefault();
         const appliedCode = e.target.appliedCode.value; 
         console.log(appliedCode)
+        // setAppliedCode(appliedCode);
+        
 
         axiosSecure.get(`/coupons/${appliedCode}`)
         .then(res => {
@@ -52,6 +66,7 @@ const Payment = () => {
     
     }
 
+    // const discountRate = parseInt(coupon.percentage);
     console.log(payFormData)
     const month = payFormData.month;
     const rent = payFormData.rent;
@@ -66,7 +81,7 @@ const Payment = () => {
    
 
     return (
-        <div className="my-14">
+        <div className="my-8">
             <div className="mb-10">
                 <SectionTitle heading={"Pay Rent, Enjoy Discounts at Concord Palace"}
                 subHeading={"Secure and Seamless Transactions"}
