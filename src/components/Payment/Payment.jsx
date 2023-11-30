@@ -17,7 +17,6 @@ const Payment = () => {
     const axiosSecure = useAxiosSecure();
     const [searchCode, setSearchCode] = useState('');
     const [discount, setDiscount] = useState(0);
-    const [error, setError] = useState('');
     const {user} = useAuth();
   
     const { data: payFormData = [] } = useQuery({
@@ -48,15 +47,16 @@ const Payment = () => {
         setSearchCode(searchCode);
 
         if(coupon){
+            
             console.log(coupon)
-        const discountRate = parseInt(coupon.percentage); 
-        const discount = rent * discountRate /100;
-        setDiscount(discount);
-        setError('');
+            const discountRate = parseInt(coupon.percentage); 
+            const discount = rent * discountRate /100;
+            setDiscount(discount);
+            
+            
+            
         }
-        else{
-            setError("Your coupon code is not valid")
-        }
+        
 
         
        
@@ -89,9 +89,7 @@ const Payment = () => {
                 </div>
                 
             </form>
-            <div className="w-3/4 lg:w-1/3 mx-auto  ">
-                 <p className="text-red-600 font-bold text-lg ">{error}</p>
-            </div>
+          
 
             <div className="w-3/4 lg:w-1/3 mx-auto my-5 p-4 space-y-2">
                 <p className="text-xl "><span className="font-semibold">Rent of {month}:  </span> Tk.{rent}</p>
