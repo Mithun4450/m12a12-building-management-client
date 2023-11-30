@@ -43,7 +43,7 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li className='text-lg font-semibold text-sky-600'><Link to="/">Home</Link></li>
                         <li className='text-lg font-semibold text-sky-600'><Link to="/apartments">Apartments</Link></li>                   
-                        {/* <li className='text-lg font-semibold text-sky-600'><Link to="/users">Users</Link></li>                    */}
+                       
                     </ul>
                 </div>
                 <div className="navbar-end">
@@ -72,7 +72,7 @@ const Navbar = () => {
                                         user && !isAdmin && !isMember && <li><Link to="/dashboard/user/myProfile">Dashboard</Link></li>
                                     }
                                     
-                                    <li><button  onClick={handleLogOut} className='btn btn-sm w-1/2 '>LogOut</button></li>
+                                    <li><button  onClick={handleLogOut} className='btn btn-sm w-1/2' >LogOut</button></li>
                                 </ul>
                            </div> 
                            :

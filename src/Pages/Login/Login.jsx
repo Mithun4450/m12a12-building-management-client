@@ -1,4 +1,4 @@
-import loginImage from '../../assets/login.png'
+import img from '../../assets/login.png'
 import { FcGoogle  } from 'react-icons/fc';
 import { BsGithub } from 'react-icons/bs';
 import { useContext, useState } from "react";
@@ -27,7 +27,7 @@ const Login = () => {
             .then(result =>{
                 const loggedInUser = result.user;
                 console.log(loggedInUser)
-                e.target.reset();
+        
                 swal("Good job!","You have successfully logged in!", "success");
                 
                 navigate(from, { replace: true });
@@ -104,7 +104,7 @@ const Login = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         <div>
-                            <img className='w-full rounded-lg ' src={loginImage}></img>
+                            <img className='w-full rounded-lg ' src={img}></img>
                         </div>
                         
                         <div>

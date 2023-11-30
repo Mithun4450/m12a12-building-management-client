@@ -1,4 +1,4 @@
-import signUpImage from '../../assets/signup.png'
+import img from '../../assets/signup.png'
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from '../../AuthProvider/AuthProvider';
@@ -78,11 +78,11 @@ const SignUp = () => {
         <div className='my-14 p-6'>
             <div className="hero min-h-screen bg-base-200 rounded-lg">
                 <div className="hero-content flex-col lg:flex-row">
-                    <div className="">
-                    <img className='w-full rounded-lg h-3/4 ' src={signUpImage}></img>
+                    <div className="text-center lg:text-left w-1/2 ">
+                    <img className='w-full rounded-lg ' src={img}></img>
                     
                     </div>
-                    <div className="card flex-shrink-0  shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0   shadow-2xl bg-base-100">
                     <form onSubmit={handleSignUp} className="card-body  ">
                         <h1 className="text-2xl font-bold">Please sign up here!</h1>
 
@@ -120,7 +120,7 @@ const SignUp = () => {
 
                             }
                         </div>
-                        <div className="form-control ">
+                        <div className="form-control">
                             <button className="btn btn-info">Sign Up</button>
                         </div>
                     </form>
