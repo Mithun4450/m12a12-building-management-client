@@ -15,22 +15,31 @@ const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 const Payment = () => {
 
     const axiosSecure = useAxiosSecure();
-    // const [appliedCode, setAppliedCode] = useState(null);
-    const [coupon, setCoupon] = useState(null);
-    
-    const [discountRate, setDiscountRate] = useState(null);
+    const [searchCode, setSearchCode] = useState('');
+    const [discountRate, setDiscountRate] = useState(0);
     const {user} = useAuth();
-    console.log(user.email)
+  
 
-    // const { refetch, data: coupon = [] } = useQuery({
-    //     queryKey: ['payFormData'],
-    //     queryFn: async() => {
-    //         const res = await axiosSecure.get(`/coupons/${appliedCode}`);
-    //         return res.data;
-    //     }
-    // })
+    const { data: coupon = [] } = useQuery({
+        queryKey: ['coupon',  searchCode],
+        queryFn: async () => {
+            const res = await axiosSecure.get(`/coupons/appliedCode?search=${searchCode}`)
+            return res.data;
+        }
+    })
 
-    
+   
+    const handleApplyCode = e =>{
+        e.preventDefault();
+        const searchCode = e.target.appliedCode.value;
+        setSearchCode(searchCode);
+
+        console.log(coupon)
+        const discountRate = parseInt(coupon.percentage); 
+        setDiscountRate(discountRate);
+       
+   
+    }
 
     const { data: payFormData = [] } = useQuery({
         queryKey: ['payFormData', user?.email],
@@ -40,41 +49,15 @@ const Payment = () => {
         }
     })
 
-    
-   
-    const handleApplyCode = e =>{
-        e.preventDefault();
-        const appliedCode = e.target.appliedCode.value; 
-        console.log(appliedCode)
-        // setAppliedCode(appliedCode);
-        
-
-        axiosSecure.get(`/coupons/${appliedCode}`)
-        .then(res => {
-            console.log(res.data)
-            setCoupon(res.data)
-        })
-
-        if(coupon){
-            setDiscountRate(parseInt(coupon.percentage))
-            return
-            
-        }
-
-        
-        
-    
-    }
-
-    // const discountRate = parseInt(coupon.percentage);
-    console.log(payFormData)
+    // console.log(payFormData)
     const month = payFormData.month;
     const rent = payFormData.rent;
-    console.log(month, rent)    
+    // console.log(month, rent)  
+
     const discount = rent * discountRate /100;
     const amountToPay = rent - discount;
     const amount = {rent, discount, amountToPay};
-    console.log(amount)
+    // console.log(amount)
 
 
 
