@@ -1,4 +1,4 @@
-import img2 from '../../assets/img2.png'
+import loginImage from '../../assets/login.png'
 import { FcGoogle  } from 'react-icons/fc';
 import { BsGithub } from 'react-icons/bs';
 import { useContext, useState } from "react";
@@ -104,7 +104,7 @@ const Login = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         <div>
-                            <img className='w-full rounded-lg ' src={img2}></img>
+                            <img className='w-full rounded-lg ' src={loginImage}></img>
                         </div>
                         
                         <div>
