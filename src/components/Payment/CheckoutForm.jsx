@@ -130,8 +130,8 @@ const CheckoutForm = ({amount, payFormData}) => {
             <button className="btn  btn-info mx-auto my-8" type="submit" disabled={!stripe || !clientSecret}>
                 Pay
             </button>
-            <p className="text-red-600 font-bold text-lg ">{error}</p>
-            {transactionId && <p className="text-green-600 font-bold text-lg"> Your transaction id: {transactionId}</p>}
+            <p className="text-red-600 font-bold text-base ">{error}</p>
+            {transactionId && <p className="text-green-600 font-bold text-base"> Your transaction id: {transactionId}</p>}
         </form>
     );
 };

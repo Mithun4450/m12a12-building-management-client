@@ -3,6 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SectionTitle from "../SectionTitle/SectionTitle";
 import { useQuery } from "@tanstack/react-query";
+import swal from "sweetalert";
 
 
 const ManageCoupons = () => {
@@ -38,7 +39,7 @@ const ManageCoupons = () => {
         })
     }
 
-    const {data: coupons = [],  refetch} = useQuery({
+    const {data: coupons = [], refetch} = useQuery({
         queryKey: ['coupons'], 
         queryFn: async() =>{
             const res = await axiosSecure.get('/coupons');
@@ -47,6 +48,28 @@ const ManageCoupons = () => {
         }
     })
     console.log(coupons)
+
+    const handleAvailable = id =>{
+        axiosSecure.patch(`/coupons/available/${id}`)
+        .then(res =>{
+            console.log(res.data)
+            if(res.data.modifiedCount > 0){
+                refetch();
+                swal("Good job!","You have successfully made the coupon available!", "success");
+            }
+        })
+    }
+    
+    const handleUnavailable = id =>{
+        axiosSecure.patch(`/coupons/unavailable/${id}`)
+        .then(res =>{
+            console.log(res.data)
+            if(res.data.modifiedCount > 0){
+                refetch();
+                swal("Done","You have made the coupon unavailable!");
+            }
+        })
+    }
 
     return (
         <div className="ml-4 my-14">
@@ -99,6 +122,8 @@ const ManageCoupons = () => {
                             <th>Coupon Description</th>
                             <th>Coupon Code</th>
                             <th>Percentage of Discount</th>
+                            <th>Available</th>
+                            <th>Unavailable</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -111,6 +136,8 @@ const ManageCoupons = () => {
                                 <td className="text-xs">{coupon.description}</td>
                                 <td className="text-xs">{coupon.code}</td>
                                 <td className="text-xs">{coupon.percentage}%</td>
+                                <td className="text-xs"><button onClick={() => handleAvailable(coupon._id)} className="btn btn-info">Make Available</button></td>
+                                <td className="text-xs"><button onClick={() => handleUnavailable(coupon._id)}  className="btn btn-error">Make Unavailable</button></td>
                                 
                             </tr>)
 
