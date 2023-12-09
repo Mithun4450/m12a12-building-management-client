@@ -22,5 +22,5 @@ Pagination is applied at the bottom of this page. Every page has 6 apartments in
 
 * Member can make payment using payment form easily. If he apply coupon during rent payment he will get discount. Member is able to pay on card. He can see his payment history. He is also able to search payment details by month name.
 
-Technology used in this project : React.js, React-Router, Tailwind CSS, DaisyUI, React-Icons, React-toastify, Sweetalert, Sweetalert2, React-datepicker, Axios, Tanstack/react-query, Stripe/reactstripe-js, Firebase, Express.js, Jsonwebtoken, MongoDB
+Technology used in this project : React.js, React-Router, Tailwind CSS, DaisyUI, React-Icons, React-toastify, Sweetalert, Sweetalert2, React-datepicker, Axios, Tanstack/react-query, Stripe/react-stripe-js, Firebase, Express.js, Jsonwebtoken, MongoDB
  
