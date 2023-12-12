@@ -3,10 +3,19 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import ApartmentCard from "../ApartmentCard/ApartmentCard";
 import { useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 
 
 
 const Apartments = () => {
+
+    useEffect(() => {
+        AOS.init({ duration: 3000 });
+    }, []);
+
     const axiosPublic = useAxiosPublic();
 
     const [currentPage, setCurrentPage] = useState(0);
@@ -45,7 +54,7 @@ const Apartments = () => {
             <SectionTitle heading={"Explore and Pick Your Desired Living Space"} subHeading={"Apartment Catalog"}>
             </SectionTitle>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 " data-aos="fade-down">
             {
                 apartments.map(apartment =><ApartmentCard key={apartment._id}
                 apartment={apartment}
