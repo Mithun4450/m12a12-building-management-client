@@ -2,6 +2,7 @@ import About from "../../components/About/About";
 import Banner from "../../components/Banner/Banner";
 import BuildingLocation from "../../components/BuildingLocation/BuildingLocation";
 import Coupons from "../../components/Coupons/Coupons";
+import Message from "../../components/Message/Message";
 
 
 const Home = () => {
@@ -10,8 +11,10 @@ const Home = () => {
             
             <Banner></Banner>
             <About></About>
-            <BuildingLocation></BuildingLocation>
             <Coupons></Coupons>
+            <BuildingLocation></BuildingLocation>
+            <Message></Message>
+            
             
             
         </div>

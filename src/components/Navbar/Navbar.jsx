@@ -5,12 +5,19 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useContext } from 'react';
 import useAdmin from '../../hooks/useAdmin';
 import useMember from '../../hooks/useMember';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Navbar = () => {
     const [isAdmin] = useAdmin();
     const [isMember] = useMember();
     const { logOut, user} = useContext(AuthContext);
     console.log(user)
+
+    useEffect(() => {
+        AOS.init({ duration: 3000 });
+    }, []);
 
     const handleLogOut = () =>{
         logOut()
@@ -19,7 +26,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='mx-auto  '>
+        <div className='mx-auto ' data-aos="fade-left" >
             <div className="navbar bg-base-100 rounded-xl">
                 <div className="navbar-start ">
                     
