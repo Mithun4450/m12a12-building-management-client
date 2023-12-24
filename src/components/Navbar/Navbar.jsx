@@ -56,7 +56,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                         {
                             user? 
-                            <div className="dropdown dropdown-end">
+                            <div className="dropdown dropdown-end ">
                                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                      {
@@ -65,7 +65,7 @@ const Navbar = () => {
                                      }
                                 </div>
                                 </label>
-                                <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                                <ul tabIndex={0} className="-mt-20 mr-14 z-[1]  p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                                 
                                     <li className='pointer-events-none text-sky-600 font-bold'><h2>{user.displayName}</h2></li>
                                     

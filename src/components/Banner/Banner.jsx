@@ -12,7 +12,7 @@ const Banner = () => {
 
 
     return (
-        <div className="h-[80vh] " >
+        <div className="h-[80vh] z-0 " >
              <Carousel className="h-[80vh] rounded-lg" autoPlay={true} interval={3000} infiniteLoop={true} showThumbs={false} stopOnHover={true}>
                 <div className="relative">
                     <img src={building} className="h-[80vh] rounded-lg "/>

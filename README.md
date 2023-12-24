@@ -1,6 +1,10 @@
-[Concord Palace Building Management](https://building-management-7b00e.web.app)
+[Concord Palace-A Building Management Website](https://building-management-7b00e.web.app)
 <br>
 Live Link: https://building-management-7b00e.web.app
+GitHub Client Side Link: https://github.com/Mithun4450/m12a12-building-management-client
+GitHub Server Side Link: https://github.com/Mithun4450/m12a12-building-management-server
+Admin Email: mithunmodakdu@yahoo.com
+Admin Password: 123456Mm@
 
 
 Features of this project:
