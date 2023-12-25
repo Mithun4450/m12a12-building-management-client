@@ -4,6 +4,7 @@ import Banner from "../../components/Banner/Banner";
 import BuildingLocation from "../../components/BuildingLocation/BuildingLocation";
 import Coupons from "../../components/Coupons/Coupons";
 import Message from "../../components/Message/Message";
+import Questions from "../../components/Questions/Questions";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <About></About>
             <Amenities></Amenities>
             <Coupons></Coupons>
+            <Questions></Questions>
             <BuildingLocation></BuildingLocation>
             <Message></Message>
             
