@@ -21,7 +21,8 @@ const Banner = () => {
                             <h1 className="text-white text-2xl md:text-4xl lg:text-5xl text-left font-bold">Welcome to our Concord Palace</h1>
                             <p className="text-white text-left text-xs md:text-sm lg:text-lg ">Manage easily your apartment needs with flexibility and exclusive support. Save time and money. Ideal for you and your family.</p>
                             <div className="flex gap-5">
-                                <button className="btn  bg-sky-600 border-none text-white">Get to know us</button>
+                                <a href="#about"><button className="btn  bg-sky-600 border-none text-white" >Get to know us</button></a>
+                                
                                 
                                 
                             </div>
@@ -37,7 +38,7 @@ const Banner = () => {
                             <h1 className="text-white text-2xl md:text-4xl lg:text-5xl text-left font-bold">Welcome to our Concord Palace</h1>
                             <p className="text-white text-left text-xs md:text-sm lg:text-lg ">Manage easily your apartment needs with flexibility and exclusive support. Save time and money. Ideal for you and your family.</p>
                             <div className="flex gap-5">
-                                <button className="btn  bg-sky-600 border-none text-white">Get to know us</button>
+                            <a href="#about"><button className="btn  bg-sky-600 border-none text-white" >Get to know us</button></a>
                                 
                             </div>
                         </div>
@@ -50,7 +51,7 @@ const Banner = () => {
                             <h1 className="text-white text-2xl md:text-4xl lg:text-5xl text-left font-bold">Welcome to our Concord Palace</h1>
                             <p className="text-white text-left text-xs md:text-sm lg:text-lg ">Manage easily your apartment needs with flexibility and exclusive support. Save time and money. Ideal for you and your family.</p>
                             <div className="flex gap-5">
-                                <button className="btn  bg-sky-600 border-none text-white">Get to know us</button>
+                            <a href="#about"><button className="btn  bg-sky-600 border-none text-white" >Get to know us</button></a>
                                 
                             </div>
                         </div>
@@ -63,7 +64,7 @@ const Banner = () => {
                             <h1 className="text-white text-2xl md:text-4xl lg:text-5xl text-left font-bold">Welcome to our Concord Palace</h1>
                             <p className="text-white text-left text-xs md:text-sm lg:text-lg ">Manage easily your apartment needs with flexibility and exclusive support. Save time and money. Ideal for you and your family.</p>
                             <div className="flex gap-5">
-                                <button className="btn  bg-sky-600 border-none text-white">Get to know us</button>
+                            <a href="#about"><button className="btn  bg-sky-600 border-none text-white" >Get to know us</button></a>
                                 
                             </div>
                         </div>
@@ -76,8 +77,7 @@ const Banner = () => {
                             <h1 className="text-white text-2xl md:text-4xl lg:text-5xl text-left font-bold">Welcome to our Concord Palace</h1>
                             <p className="text-white text-left text-xs md:text-sm lg:text-lg ">Manage easily your apartment needs with flexibility and exclusive support. Save time and money. Ideal for you and your family.</p>
                             <div className="flex gap-5">
-                                <button className="btn  bg-sky-600 border-none text-white">Get to know us</button>
-                                
+                            <a href="#about"><button className="btn  bg-sky-600 border-none text-white" >Get to know us</button></a>
                             </div>
                         </div>
                     </div>
