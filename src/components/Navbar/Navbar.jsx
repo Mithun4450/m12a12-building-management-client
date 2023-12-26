@@ -42,6 +42,8 @@ const Navbar = () => {
                       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/apartments">Apartments</Link></li>
+                        <li className='text-lg font-semibold text-sky-600'><Link to="/team">Our Team</Link></li> 
+                       
 
                       </ul>
                     </div>
@@ -50,6 +52,9 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li className='text-lg font-semibold text-sky-600'><Link to="/">Home</Link></li>
                         <li className='text-lg font-semibold text-sky-600'><Link to="/apartments">Apartments</Link></li>                   
+                        <li className='text-lg font-semibold text-sky-600'><Link to="/team">Our Team</Link></li> 
+                                        
+                                          
                        
                     </ul>
                 </div>

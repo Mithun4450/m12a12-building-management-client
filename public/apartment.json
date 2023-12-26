@@ -1,38 +1,50 @@
 [
   {
-    "name": "Gymnasium",
-    "icon": "https://i.ibb.co/7XqQrjR/gym.jpg",
-    "description": "Fully-equipped gym with modern fitness equipment.",
-    "status": "available"
+    "name": "John Doe",
+    "position": "Property Manager",
+    "email": "john.doe@concordpalace.com",
+    "phone": "+1234567890",
+    "photo": "https://i.ibb.co/ySWNzC2/person.png",
+    "bio": "With over a decade of experience in property management, John oversees the day-to-day operations at Concord Palace, ensuring a seamless living experience for residents."
   },
   {
-    "name": "Swimming Pool",
-    "icon": "https://i.ibb.co/PxV2ySF/swimming.jpg",
-    "description": "Large outdoor swimming pool with lounging area.",
-    "status": "available"
+    "name": "Emily Smith",
+    "position": "Customer Relations Officer",
+    "email": "emily.smith@concordpalace.com",
+    "phone": "+1987654321",
+    "photo": "https://i.ibb.co/ySWNzC2/person.png",
+    "bio": "Emily is dedicated to providing exceptional customer service and addressing residents' queries and concerns promptly. Reach out to her for any assistance."
   },
   {
-    "name": "Parking Facility",
-    "icon": "https://i.ibb.co/vvFKQSG/parking.webp",
-    "description": "Secured parking area with ample space for residents.",
-    "status": "available"
+    "name": "David Johnson",
+    "position": "Maintenance Supervisor",
+    "email": "david.johnson@concordpalace.com",
+    "phone": "+1122334455",
+    "photo": "https://i.ibb.co/ySWNzC2/person.png",
+    "bio": "David leads our skilled maintenance team, ensuring that the building facilities are well-maintained. Contact him for any maintenance-related issues."
   },
   {
-    "name": "Community Lounge",
-    "icon": "https://i.ibb.co/GF4CN9x/lounge.webp",
-    "description": "Relaxing communal lounge area for social gatherings.",
-    "status": "available"
+    "name": "Sophia Lee",
+    "position": "Financial Administrator",
+    "email": "sophia.lee@concordpalace.com",
+    "phone": "+1555099887",
+    "photo": "https://i.ibb.co/ySWNzC2/person.png",
+    "bio": "Sophia manages the financial aspects of Concord Palace, handling rent payments, invoices, and financial inquiries. Feel free to get in touch for financial assistance."
   },
   {
-    "name": "Playground",
-    "icon": "https://i.ibb.co/hHkjg8r/playground.jpg",
-    "description": "Safe and fun playground for children.",
-    "status": "available"
+    "name": "Michael Brown",
+    "position": "Security Supervisor",
+    "email": "michael.brown@concordpalace.com",
+    "phone": "+1447788990",
+    "photo": "https://i.ibb.co/ySWNzC2/person.png",
+    "bio": "Michael leads our dedicated security team, ensuring the safety and security of our residents. Contact him for any security-related concerns."
   },
   {
-    "name": "Pet-Friendly Zone",
-    "icon": "https://i.ibb.co/CmG19m4/pet.webp",
-    "description": "Designated areas for pets within the building premises.",
-    "status": "available"
+    "name": "Olivia Garcia",
+    "position": "Community Events Coordinator",
+    "email": "olivia.garcia@concordpalace.com",
+    "phone": "+1666777889",
+    "photo": "https://i.ibb.co/ySWNzC2/person.png",
+    "bio": "Olivia organizes engaging community events and activities for our residents. Reach out to her for information about upcoming events or to propose ideas."
   }
 ]

@@ -6,19 +6,6 @@ import AmenityCard from "../AmenityCard/AmenityCard";
 
 const Amenities = () => {
 
-    // const axiosPublic = useAxiosPublic();
-
-    // const {data: apartments = [],  refetch} = useQuery({
-    //     queryKey: ['apartments'], 
-    //     queryFn: async() =>{
-    //         const res = await axiosPublic.get(`/apartments?page=${currentPage}&size=6`);
-    //         return res.data;
-            
-    //     }
-    // })
-    // refetch();
-    // console.log(apartments);
-
     const axiosPublic = useAxiosPublic();
 
     const {data: amenities = []} = useQuery({

@@ -32,6 +32,7 @@ import AdminRoute from './components/AdminRoute/AdminRoute';
 import Users from './components/Users/Users';
 import MemberRoute from './components/MemberRoute/MemberRoute';
 import Payment from './components/Payment/Payment';
+import Team from './components/Team/Team';
 
 const queryClient = new QueryClient();
 
@@ -57,7 +58,10 @@ const router = createBrowserRouter([
         path: "/apartments",
         element: <Apartments></Apartments>
       },
-      
+      {
+        path: "/team",
+        element: <Team></Team>
+      }
       
     ]
   },

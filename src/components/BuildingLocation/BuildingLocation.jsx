@@ -12,7 +12,7 @@ const BuildingLocation = () => {
     }, []);
 
     return (
-        <div className="my-14">
+        <div className="my-14" id="contact">
             <SectionTitle 
                 subHeading={"Reach Out to Us at"}
                 heading={"Location & Contact Information"}
