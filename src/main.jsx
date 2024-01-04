@@ -27,12 +27,13 @@ import MakeAnnouncements from './components/MakeAnnoucements/MakeAnnouncements';
 import AgreementRequests from './components/AgreementRequests/AgreementRequests';
 import ManageCoupons from './components/ManageCoupons/ManageCoupons';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import MakeAdmin from './components/Users/Users';
+// import MakeAdmin from './components/Users/Users';
 import AdminRoute from './components/AdminRoute/AdminRoute';
-import Users from './components/Users/Users';
+// import Users from './components/Users/Users';
 import MemberRoute from './components/MemberRoute/MemberRoute';
 import Payment from './components/Payment/Payment';
 import Team from './components/Team/Team';
+import Goal from './components/Goal/Goal';
 
 const queryClient = new QueryClient();
 
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: "/team",
         element: <Team></Team>
+      },
+      {
+        path: "/goal",
+        element: <Goal></Goal>
       }
       
     ]

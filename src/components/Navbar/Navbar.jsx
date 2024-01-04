@@ -5,9 +5,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useContext } from 'react';
 import useAdmin from '../../hooks/useAdmin';
 import useMember from '../../hooks/useMember';
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
+
 
 const Navbar = () => {
     const [isAdmin] = useAdmin();
@@ -15,10 +13,7 @@ const Navbar = () => {
     const { logOut, user} = useContext(AuthContext);
     console.log(user)
 
-    useEffect(() => {
-        AOS.init({ duration: 3000 });
-    }, []);
-
+   
     const handleLogOut = () =>{
         logOut()
         .then()
@@ -26,7 +21,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className='mx-auto ' data-aos="fade-left" >
+        <div className='mx-auto ' >
             <div className="navbar bg-base-100 rounded-xl">
                 <div className="navbar-start ">
                     
@@ -43,7 +38,7 @@ const Navbar = () => {
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/apartments">Apartments</Link></li>
                         <li className='text-lg font-semibold text-sky-600'><Link to="/team">Our Team</Link></li> 
-                       
+                        <li className='text-lg font-semibold text-sky-600'><Link to="/goal">Our Goals</Link></li> 
 
                       </ul>
                     </div>
@@ -53,6 +48,7 @@ const Navbar = () => {
                         <li className='text-lg font-semibold text-sky-600'><Link to="/">Home</Link></li>
                         <li className='text-lg font-semibold text-sky-600'><Link to="/apartments">Apartments</Link></li>                   
                         <li className='text-lg font-semibold text-sky-600'><Link to="/team">Our Team</Link></li> 
+                        <li className='text-lg font-semibold text-sky-600'><Link to="/goal">Our Goals</Link></li> 
                                         
                                           
                        
