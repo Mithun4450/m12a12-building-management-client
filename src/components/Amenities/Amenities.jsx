@@ -18,7 +18,7 @@ const Amenities = () => {
     console.log(amenities)
 
     return (
-        <div id="facility">
+        <div id="facility" className="my-24">
             <SectionTitle heading={"Experience a Lifestyle of Comfort and Convenience"} subHeading={"Discover Our Exceptional Amenities"}></SectionTitle>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">

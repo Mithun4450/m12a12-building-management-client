@@ -4,7 +4,7 @@ import building from "../../assets/building.png"
 
 const About = () => {
     return (
-        <div className="my-14" id="about">
+        <div className="my-24" id="about">
             <SectionTitle 
                 subHeading={"About Concord Palace"}
                 heading={"Where Luxury Meets Lifestyle"}

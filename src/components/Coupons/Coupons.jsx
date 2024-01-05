@@ -27,7 +27,7 @@ const Coupons = () => {
     console.log(coupons)
 
     return (
-        <div className="my-14">
+        <div className="my-24">
             <div>
                 <SectionTitle heading={"Introducing our exclusive discount coupons for tenants"} subHeading={"Exclusive Coupons & Discounts"}></SectionTitle>
             </div>

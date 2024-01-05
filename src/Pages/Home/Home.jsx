@@ -5,6 +5,7 @@ import BuildingLocation from "../../components/BuildingLocation/BuildingLocation
 import Coupons from "../../components/Coupons/Coupons";
 import Message from "../../components/Message/Message";
 import Questions from "../../components/Questions/Questions";
+import Testimonial from "../../components/Testimonial/Testimonial";
 
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             <About></About>
             <Amenities></Amenities>
             <Coupons></Coupons>
+            <Testimonial></Testimonial>
             <Questions></Questions>
             <BuildingLocation></BuildingLocation>
             <Message></Message>

@@ -3,7 +3,7 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 
 const Questions = () => {
     return (
-        <div className="my-14">
+        <div className="my-24">
             <SectionTitle heading={"Find Answers to Common Queries and Get Assistance"}
             subHeading={ "Need Help? Explore Our Frequently Asked Questions"}
             ></SectionTitle>
