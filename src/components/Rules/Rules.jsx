@@ -2,7 +2,7 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 
 const Rules = () => {
     return (
-        <div className="my-24">
+        <div className="my-24" id="rules">
             <SectionTitle heading={"Understanding Your Agreement and Community Rules"}
             subHeading={"Resident Guidelines"}
             ></SectionTitle>

@@ -7,7 +7,7 @@ const Footer = () => {
                 <a href="#about" className="link link-hover">About us</a>
                 <a href="#contact" className="link link-hover">Contact</a>
                 <a href="#facility" className="link link-hover">Housing Services & Facilities</a>
-                <a className="link link-hover">Terms & Conditions</a>
+                <a href="#rules" className="link link-hover">Terms & Conditions</a>
             </nav> 
             <nav>
                 <div className="grid grid-flow-col gap-4">
