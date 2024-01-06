@@ -4,14 +4,16 @@ const CouponCard = ({coupon}) => {
     const {code, description} = coupon;
     return (
         <div>
-            <div className="card  h-44 bg-info text-info-content">
-                <div className="card-body">
+            <div className="card   text-info-content shadow-xl border border-sky-300">
+                <div className="card-body hover:bg-white text-white hover:text-sky-600">
                     
-                    <h2 className="card-title text-lg">Coupon Code:<span className="text-rose-600 font-bold" >{code}</span> </h2>
-                    <p>{description}</p>
+                    <h2 className="  font-bold">{code}</h2>
+                    <p className="text-xs">{description}</p>
                    
                 </div>
             </div>
+
+            
             
         </div>
     );
