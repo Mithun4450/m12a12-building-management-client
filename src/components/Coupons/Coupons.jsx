@@ -28,7 +28,7 @@ const Coupons = () => {
     console.log(coupons)
 
     return (
-        <div className="my-24" >
+        <div className="mt-24 mb-96 md:my-24 " >
             <div>
                 <SectionTitle heading={"Introducing our exclusive discount coupons for tenants"} subHeading={"Exclusive Coupons & Discounts"}></SectionTitle>
             </div>
@@ -37,15 +37,19 @@ const Coupons = () => {
                 <img src={img} alt="" className="h-96 w-full" />
             </div> */}
 
-            
-                
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-5 mt-10 bg-cover bg-center" style={{backgroundImage: `url(${img})`}} data-aos="fade-down">
-            {
-                coupons.map(coupon =><CouponCard key={coupon._id}
-                coupon={coupon}
-                ></CouponCard>)
-            }
+            <div className="bg-cover bg-center h-[100vh] relative" style={{backgroundImage: `url(${img})`}}>
+
+                <div className="grid grid-cols-1 md:grid-cols-3   gap-5  h-1/3 w-3/4  absolute bottom-0 left-24 "  data-aos="fade-down">
+                {
+                    coupons.map(coupon =><CouponCard key={coupon._id}
+                    coupon={coupon}
+                    ></CouponCard>)
+                }
+                </div>
+
             </div>
+                
+            
             
             
             

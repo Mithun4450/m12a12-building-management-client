@@ -10,6 +10,7 @@
   import { useEffect, useRef } from "react";
   import emailjs from "@emailjs/browser";
   import Swal from "sweetalert2";
+  import message from "../../assets/message.png"
   
   
   const Message = () => {
@@ -54,60 +55,67 @@
        
         <div className="">
             <h1 className="text-2xl text-center font-semibold mb-8">You can send your message here!!!</h1>
-          <form className="col-span-2" ref={form} onSubmit={sendEmail}>
-            <div className="flex gap-3">
-              <div className="form-control w-full">
-                <label className="label">
-                  <span className="label-text text-lg">Name</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Type here"
-                  name="user_name"
-                  className="input input-bordered w-full"
-                />
-              </div>
-              <div className="form-control w-full">
-                <label className="label">
-                  <span className="label-text text-lg">Email *</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Type here"
-                  name="user_email"
-                  className="input input-bordered w-full"
-                  required
-                />
-              </div>
+          <div className="flex flex-col lg:flex-row-reverse gap-5 ">
+            <div className="w-full lg:w-1/2">
+                <img src={message} alt="" className="rounded-lg" />
             </div>
-            <div className="form-control w-full">
-              <label className="label">
-                <span className="label-text text-lg">Subject</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Type here"
-                name="subject"
-                className="input input-bordered w-full"
-                required
-              />
+            <div className="w-full lg:w-1/2">
+                <form className="col-span-2" ref={form} onSubmit={sendEmail}>
+                <div className="flex gap-3">
+                  <div className="form-control w-full">
+                    <label className="label">
+                      <span className="label-text text-lg">Name</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Type here"
+                      name="user_name"
+                      className="input input-bordered w-full"
+                    />
+                  </div>
+                  <div className="form-control w-full">
+                    <label className="label">
+                      <span className="label-text text-lg">Email *</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Type here"
+                      name="user_email"
+                      className="input input-bordered w-full"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="form-control w-full">
+                  <label className="label">
+                    <span className="label-text text-lg">Subject</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Type here"
+                    name="subject"
+                    className="input input-bordered w-full"
+                    required
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Message *</span>
+                  </label>
+                  <textarea
+                    className="textarea textarea-bordered h-24"
+                    placeholder="Message"
+                    name="message"
+                    required
+                  ></textarea>
+                </div>
+                <div className="w-52 mx-auto mt-8">
+                    <input type="submit" value="Send" className="btn text-black  bg-rose-300 border-none  w-24 hover:text-black" />
+                </div>
+                
+                </form>
             </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Message *</span>
-              </label>
-              <textarea
-                className="textarea textarea-bordered h-24"
-                placeholder="Message"
-                name="message"
-                required
-              ></textarea>
-            </div>
-            <div className="w-52 mx-auto mt-8">
-                 <input type="submit" value="Send" className="btn  bg-sky-600 border-none text-white w-24 hover:text-black" />
-            </div>
-            
-          </form>
+          </div>
         </div>
       </div>
     );
